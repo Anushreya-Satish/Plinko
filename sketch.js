@@ -88,6 +88,7 @@ function setup() {
 }
 
 function draw() {
+  Engine.update(engine);
   rectMode(CENTER);
   background("orange");
 
@@ -103,8 +104,9 @@ function draw() {
     divisions[j].display();
   }
 
+  //particles
   if (frameCount %60===0) {
-    particles.push(new Particle(random(0,800),0));
+    particles.push(new Particle(random(0,800),0,8));
   }
   for (var k = 0; k < particles.length; k++) {
     particles[k].display();
